@@ -25,9 +25,13 @@ endpoints:
 
 spring:
    sleuth:
-      log:
-        json:
-          enabled: true
+    sampler:
+      percentage: 1.0
+    log:
+      json:
+        enabled: true
+  rabbitmq:
+    addresses: ${RABBIT_HOST:localhost}
 ---
 spring:
   profiles: cloud
